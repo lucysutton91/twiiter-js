@@ -3,7 +3,7 @@ let tweetBank = [];
 let numberOfTweets = 100;
 
 function add (name, content) {
-    let tweetId = 
+    let tweetId = tweetBank.length + 1;
     tweetBank.push({ name: name, content: content, tweetId: tweetId});
 }
 
