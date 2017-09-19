@@ -2,6 +2,7 @@ const express = require( 'express' );
 const nunjucks = require('nunjucks');
 const app = express();
 const routes = require('./routes');
+const bodyParser = require('body-parser');
 
 let locals = {
     title: 'Twitter Template',
@@ -22,6 +23,15 @@ nunjucks.render('index.html', locals, function (err, output) {
 app.listen(3000, function () {
     console.log('server listening')
 });
+
+//body parsers
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 
 app.use('/', routes);
 app.use(express.static('public'))

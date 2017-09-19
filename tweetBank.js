@@ -1,6 +1,6 @@
 const _ = require('lodash');
 let tweetBank = [];
-let numberOfTweets = 100;
+let numberOfTweets = 10;
 
 function add (name, content) {
     let tweetId = tweetBank.length + 1;
