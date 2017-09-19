@@ -1,8 +1,10 @@
 const _ = require('lodash');
 let tweetBank = [];
+let numberOfTweets = 100;
 
 function add (name, content) {
-    tweetBank.push({ name: name, content: content });
+    let tweetId = 
+    tweetBank.push({ name: name, content: content, tweetId: tweetId});
 }
 
 function list () {
@@ -34,7 +36,10 @@ const getFakeTweet = function() {
     return "Fullstack Academy is " + randArrayEl(awesome_adj) + "! The instructors are just so " + randArrayEl(awesome_adj) + ". #fullstacklove #codedreams";
 };
 
-for (let i = 0; i < 10; i++) {
-    module.exports.add( getFakeName(), getFakeTweet() );
+
+
+for (let i = 0; i < numberOfTweets; i++) {
+    module.exports.add( getFakeName(), getFakeTweet());
 }
 
+console.log(list());
