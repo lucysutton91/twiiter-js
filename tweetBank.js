@@ -3,10 +3,12 @@ let tweetBank = [];
 let numberOfTweets = 10;
 
 function add (name, content) {
-    let tweetId = tweetBank.length + 1;
-    tweetBank.push({ name: name, content: content, tweetId: tweetId});
+    // let tweetId = tweetBank.length + 1;
+    tweetBank.push({ name: name, content: content, tweetId: tweetBank.length});
 }
 
+//deep cloning the array so that the original is not changed
+//when someone sorts or filter
 function list () {
     return _.cloneDeep(tweetBank);
 }
