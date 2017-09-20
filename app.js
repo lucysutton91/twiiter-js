@@ -33,9 +33,11 @@ app.listen(3000, function () {
 //body parsers
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+//for HTML form submits
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // parse application/json
+//for Ajax requests
 app.use(bodyParser.json());
 
 //any / req will be forwarded to the route handler in index.js
